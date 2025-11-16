@@ -22,7 +22,67 @@
             </li>
 
         </ul>
-        <button class="btn-Add-New">Add New Worker</button>
+        <!-- Button to trigger the modal -->
+        <button id="Add-Worker" class="btn-Add-New">Add New Worker</button>
+        <!-- modal -->
+         <div id="modal">
+            <div id="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add Worker</h2>
+                <form id="form">
+                    <label for="name">Name : </label>
+                    <input type="text" id="name" name="name" placeholder="Nom-Prenom" required><br><br>
+                    <label for="role">Role :</label>
+                    <select name="role" id="role">
+                        <option value="Receptionist">Receptionist</option>
+                        <option value="Technician">Technician</option>
+                        <option value="Security">Security</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Cleaning">Cleaning</option>
+                    </select><br><br>
+                    <label for="photo">Photo (URL):</label>
+                    <input type="text" id="photo" name="photo" placeholder="URL" required><br><br>
+                    <img src="" alt="">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+                    <label for="phone">Phone :</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone" required><br><br>
+                    <label for="experience">Experience :</label>
+                    <div id="plusier-experience">
+                        <label for="company">Company :</label>
+                        <input type="text" id="company" name="company" placeholder="Company" required><br>
+                        <label for="experience-start-date" >Start :</label>
+                        <input type="date" id="experience-start-date" name="experience-start-date" required><br>
+                        <label for="experience-end-date">End  :</label>
+                        <input type="date" id="experience-end-date" name="experience-end-date" required><br>
+                    </div>
+                        <button id="Add-experience">+</button><br>
+                  <button type="submit">Add Worker</button>
+                </form>
+            </div>
+         </div>
+
+        <!-- The modal -->
+        <!-- <div id="employee-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add Employee</h2>
+                <form id="employee-form">
+                   
+                    <div id="experience-container">
+                        <div class="experience">
+                            <label for="experience-start-date">Start Date:</label>
+                            <input type="date" id="experience-start-date" name="experience-start-date[]">
+
+                            <label for="experience-end-date">End Date:</label>
+                            <input type="date" id="experience-end-date" name="experience-end-date[]">
+                            <button class="add-experience-btn">+</button>
+                        </div>
+                    </div>
+                    <button type="submit">Add Employee</button>
+                </form>
+            </div>
+        </div> -->
     </header>
     <main>
 
@@ -30,7 +90,7 @@
             <div class="div1 ">
                 <ul>
                     <!-- <li class="li1"> -->
-                        <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
+                    <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
                         <div class="div-name">
                             <p class="name nameSmall">persone1</p>
                             <p class="small">ee</p>
@@ -45,7 +105,7 @@
             <div class="div2 ">
                 <ul>
                     <!-- <li class="li1"> -->
-                        <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
+                    <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
                         <div class="div-name">
                             <p class="name nameSmall">persone1</p>
                             <p class="small">ee</p>
@@ -63,7 +123,7 @@
                 <div class="div3">
                     <ul>
                         <!-- <li class="li1 lismall"> -->
-                            <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
+                        <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">persone1</p>
                                 <p class="small SMALL">ee</p>
@@ -105,7 +165,7 @@
                 <div class="div4">
                     <ul>
                         <!-- <li class="li1 lismall"> -->
-                            <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
+                        <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">persone1</p>
                                 <p class="small">ee</p>
@@ -141,7 +201,7 @@
 
                         </li> -->
                         <!-- <li class="li1 lismall"> -->
-                            <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
+                        <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">persone1</p>
                                 <p class="small">ee</p>
@@ -158,7 +218,7 @@
                 <div class="div5">
                     <ul>
                         <!-- <li class="li1 lismall"> -->
-                            <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
+                        <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">persone1</p>
                                 <p class="small">ee</p>
@@ -173,7 +233,7 @@
                 <div class="div6">
                     <ul>
                         <!-- <li class="li1 lismall"> -->
-                            <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
+                        <!-- <img class="image imgSmall" src="https://avatar.iran.liara.run/public/31" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">persone1</p>
                                 <p class="small">ee</p>
@@ -187,10 +247,12 @@
                 </div>
             </aside>
         </section>
-       
+
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>
 </body>
+
 </html>

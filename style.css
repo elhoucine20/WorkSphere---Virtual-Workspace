@@ -24,43 +24,28 @@ header{
     align-items: center;
     gap: 15px;
 }
-/* modal */
-/* .modal { */
-  /* display: none;
-  position: fixed; */
-  /* z-index: 1; */
-  /* left: 0; */
-  /* top: 0; */
-  /* width: 100%; */
-  /* height: 100%; */
-  /* overflow: auto; */
-  /* background-color: rgb(0,0,0); */
-  /* background-color: rgba(0,0,0,0.4); */
-/* } */
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
 }
 
-/* .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-} */
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-/* //////////////////////// */
 #modal{
+    display: none;
+    position: fixed;
+    top: -10px;
+    left: 212px;
+    
+  z-index: 1;
+    width: 50%;
+    height: 100%;
+  overflow: auto; 
+
+}
+#modal2{
     display: none;
     position: fixed;
     top: -10px;
@@ -78,7 +63,20 @@ header{
   font-size: 28px;
   font-weight: bold;
 }
+#close2{
+    color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
 #modal-content {
+  background-color: #fefefe;
+  margin:  auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+#modal-contentt {
   background-color: #fefefe;
   margin:  auto;
   padding: 20px;
@@ -93,33 +91,36 @@ main{
      background-image: url('img/photo-de-setnence-croisi.jpg');
      background-repeat: no-repeat;
      background-size: cover;
+     /* background-origin: unset; */
+
+     
 }
 
 .section{
     width: 38%;
     height: 100vh;
-    background-color: red;
-    opacity: 0.5;
+    /* background-color: red; */
+    /* opacity: 0.5; */
 }
 .section2{
     width: 45%;
     height:100vh;
     /* background-color: rgb(0, 255, 51); */
-    opacity: 0.5;
+    /* opacity: 0.5; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
 }
 .div1{
-    background-color: #cdc612;
+    /* background-color: #cdc612; */
     height: 33%;
     width: 100%;
     align-content: center;
     text-align: center;
 }
 .div2{
-    background-color: #3712cd;
+    /* background-color: #3712cd; */
     height:67%;
     width: 100%;
     align-content: center;
@@ -127,13 +128,13 @@ main{
 }
 .div3{
     width: 50%;
-    background-color: #2614b3;
+    /* background-color: #2614b3; */
     align-content: center;
     text-align: center;
 }
 .div4{
     width: 50%;
-    background-color: #01d5fb;
+    /* background-color: #01d5fb; */
     align-content: center;
     text-align: center;
 
@@ -141,24 +142,24 @@ main{
  .asideTop{
     width: 100%;
     height: 34%;
-    background-color: #d40606;
+    /* background-color: #d40606; */
     display: flex;
  }
  .asideBottom{
-    background-color: #cb11dc;
+    /* background-color: #cb11dc; */
     display: flex;
     justify-content: space-around;
     height: 34%;
  }
  .div5{
     width: 50%;
-    background-color: #2614b3;
+    /* background-color: #2614b3; */
     align-content: center;
     text-align: center;
 }
 .div6{
     width: 50%;
-    background-color: #01d5fb;
+    /* background-color: #01d5fb; */
     align-content: center;
     text-align: center;
 }
@@ -183,7 +184,7 @@ main{
 }
 .small{
     font-size: 10px;
-    position: relative;
+    /* position: relative; */
 }
 
 .btn-edit{
@@ -210,7 +211,63 @@ main{
     padding: 0px 0px;
       
 } 
+.ulFlex{
+    display: flex;
+    flex-wrap: wrap;
+}
+input{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    
+}
+select{
+    padding: 10px;
+    border-radius: 10px;
+    /* display: flex;
+    flex-direction: column; */
+}
+option{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #8a6666;
+    /* opacity: 0.4; */
+    /* display: flex;
+    flex-direction: column; */
+}
+label{
+    font-weight: bold;
+    color: rgb(71, 62, 68);
+    
+}
+form{
+    /* align-content: center; */
+    /* text-align: center; */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: #a5c596;
+
+}
+h2{
+    /* text-align: center; */
+    /* color: rgb(0, 0, 0); */
+}
+.Btn-Cancel{
+    padding: 10px;
+    background-color: #9c9696;
+}
+.List-Header{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 
-/* ///////////////// */
 
+
+
+/* medai */
+/* @media(max-width:768px){
+
+} */

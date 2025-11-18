@@ -3,13 +3,12 @@
     padding: 0px;
     margin: 0;
 }
-#photto{
+/* #photto{
     width: 60px;
     height: 60px;
     border-radius: 100%;
     background-color: #a3bbb6;
-    /* margin-bottom: 10px; */
-}
+} */
 .image{
     width:  35px;
     height:  35px;
@@ -28,6 +27,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     gap: 15px;
 }
 
@@ -44,12 +44,19 @@ header{
     position: fixed;
     top: -10px;
     left: 212px;
-    
   z-index: 1;
     width: 50%;
     height: 100%;
   overflow: auto; 
-
+  
+}
+#bgMOdal{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    inset: 0;
+    backdrop-filter:blur(10px);
 }
 #modal2{
     display: none;
@@ -98,13 +105,17 @@ main{
      background-repeat: no-repeat;
      background-position: center ;
     background-size:100% 100% ;
-    margin: 10px;
-    margin-bottom: 15px;
+    /* margin: 10px; */
+    /* margin-bottom: 15px; */
      /* object-fit: cover; */
 
      /* background-origin: unset; */
 
-     
+}
+#experience{
+    text-align: center;
+    display: inline;
+    width: 100px;
 }
 
 .section{
@@ -181,15 +192,13 @@ main{
     color: white;
 }
 .li1{
+    max-width: 200px;
     background-color: #d0d0d0;
-    /* background-size: cover; */
     display: flex;
     align-items: center;
-    /* gap: 5px; */
     justify-content: space-evenly;
     border: solid 2px ;
     border-radius: 10px;
-    /* padding: 5px; */
 }
 .name{
     font-weight: bold;
@@ -201,6 +210,8 @@ main{
 
 .btn-edit{
     padding: 0px 5px;
+    color: red;
+    /* background-color: rgb(137, 11, 11); */
 }
 
 .lismall{
@@ -229,6 +240,7 @@ main{
 .ulFlex{
     display: flex;
     flex-wrap: wrap;
+    gap:1px
 }
 input{
     padding: 10px;
@@ -256,18 +268,14 @@ label{
     
 }
 form{
-    /* align-content: center; */
-    /* text-align: center; */
-    padding: 15px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     background-color: #a5c596;
+    
 
 }
-h2{
-    /* text-align: center; */
-    /* color: rgb(0, 0, 0); */
-}
+
 .Btn-Cancel{
     padding: 10px;
     background-color: #9c9696;
@@ -285,8 +293,16 @@ h2{
 /* medai */
 
 
-
-
+.informations{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+span{
+    font-size: 15px;
+    font-weight: bolder;
+}
 
 @media(max-width:600px){
  main{

@@ -16,15 +16,15 @@
             <div class="li1 lisHeader">
                 <img class="image imgSmalll" src="img/_DSC0188.jpg" alt="avatar">
                 <div class="div-name">
-                    <p class="name nameSmall2M">persone1</p>
-                    <p  class="small small2M">ee</p>
+                    <p class="name nameSmall2M">el houcine</p>
+                    <p  class="small small2M">manager</p>
                 </div>
-                <button class="btnEditsmall" class="btn-edit">edit</button>
+                <button class="btnEditsmall btn-edit">sup</button>
             </div>
 
         </div>
         <button id="AddWorker" class="btn-Add-New">Add New Worker</button>
-
+          <div id="bgMOdal"></div>
          <div id="modal">
             <div id="modal-content">
                 <span id="close" class="close">&times;</span>
@@ -37,26 +37,25 @@
                         <option value="Receptionist">Receptionist</option>
                         <option value="Technician">Technician</option>
                         <option value="Security">Security</option>
-                        <option value="Manager">Manager</option>
+                        <option value="Manager">manager</option>
                         <option value="Cleaning">Cleaning</option>
                     </select><br><br>
                     <label for="photo">Photo (URL):</label>
                     <input type="text" id="photo" name="photo" placeholder="URL" required ><br>
-                    <img id="photto" src="" alt=""><br>
+                    <!-- <img id="photto" src="" alt=""><br> -->
                     <label for="email">Email :</label>
                     <input type="email" id="email" name="email" placeholder="Email" required ><br><br>
                     <label for="phone">Phone :</label>
                     <input type="tel" id="phone" name="phone" placeholder="Phone" required><br><br>
-                    <label for="experience">Experience :</label>
-                    <div id="plusier-experience">
+                    <label id="experience" for="experience">Experience :</label> <br>
+                    <div style="display: none;" id="plusier-experience">
                         <label for="company">Company :</label>
-                        <input type="text" id="company" name="company" placeholder="Company" required><br>
+                        <input type="text" id="company" name="company" placeholder="Company"><br>
                         <label for="experience-start-date" >Start :</label>
-                        <input type="date" id="experience-start-date" name="experience-start-date" required><br>
+                        <input type="date" id="experience-start-date" name="experience-start-date" ><br>
                         <label for="experience-end-date">End  :</label>
-                        <input type="date" id="experience-end-date" name="experience-end-date" required><br>
-                    </div>
-                        <button type="button" class="Btn-Cancel" id="Add-experience">Plus</button><br><br><br>
+                        <input type="date" id="experience-end-date" name="experience-end-date" ><br>
+                    </div><br><br>
                   <button class="btn-Add-New" id="Valide_Worker" type="submit">Add Worker</button><br>
                   <button class="Btn-Cancel" type="reset">Cancel</button><br>
                 </form>
@@ -70,15 +69,15 @@
     <main>
 
         <section class="section">
-            <div class="div1 ">
+            <div class="div1">
                 <div class="ulFlex">
                     <div class="li1 ">
-                    <img class="image imgSmall" src="" alt="avatar">
+                    <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/operator/female" alt="avatar">
                         <div class="div-name">
-                            <p class="name nameSmall">persone1</p>
-                            <p class="small">ee</p>
+                            <p class="name nameSmall">manal</p>
+                            <p class="small">Receptionist</p>
                         </div>
-                        <button class="btn-edit btnEDITsmall">edit</button>
+                        <button class="btn-edit btnEDITsmall">sup</button>
 
                     </div>
 
@@ -89,12 +88,12 @@
                 <div class="ulFlex">
                         <div class="ulFlex">
                     <div class="li1 lismall">
-                    <img class="image imgSmall" src="" alt="avatar">
+                    <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/astronomer/male" alt="avatar">
                         <div class="div-name">
-                            <p class="name nameSmall">persone1</p>
-                            <p class="small">ee</p>
+                            <p class="name nameSmall">mohamed</p>
+                            <p class="small">Technician</p>
                         </div>
-                        <button class="btn-edit btnEDITsmall">edit</button>
+                        <button class="btn-edit btnEDITsmall">sup</button>
 
                     </div>
 
@@ -109,15 +108,24 @@
                 <div class="div3">
                     <div class="ulFlex">
                         <div class="li1 lismall">
-                        <img class="image imgSmall" src="" alt="avatar">
+                        <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/police/female" alt="avatar">
                             <div class="div-name">
-                                <p class="name nameSmall">persone1</p>
-                                <p class="small SMALL">ee</p>
+                                <p class="name nameSmall">hasna</p>
+                                <p class="small SMALL">Cleaning</p>
                             </div>
-                            <button class="btn-edit btnEDITsmall">edit</button>
+                            <button class="btn-edit btnEDITsmall">sup</button>
 
                         </div>
                          <div class="li1 lismall">
+                        <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/chef/female" alt="avatar">
+                            <div class="div-name">
+                                <p class="name nameSmall">khalid</p>
+                                <p class="small SMALL">Technician</p>
+                            </div>
+                            <button class="btn-edit btnEDITsmall">sup</button>
+
+                        </div>
+                         <!-- <div class="li1 lismall">
                         <img class="image imgSmall" src="" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">persone1</p>
@@ -125,8 +133,8 @@
                             </div>
                             <button class="btn-edit btnEDITsmall">edit</button>
 
-                        </div>
-                         <div class="li1 lismall">
+                        </div> -->
+                         <!-- <div class="li1 lismall">
                         <img class="image imgSmall" src="" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">persone1</p>
@@ -134,16 +142,7 @@
                             </div>
                             <button class="btn-edit btnEDITsmall">edit</button>
 
-                        </div>
-                         <div class="li1 lismall">
-                        <img class="image imgSmall" src="" alt="avatar">
-                            <div class="div-name">
-                                <p class="name nameSmall">persone1</p>
-                                <p class="small SMALL">ee</p>
-                            </div>
-                            <button class="btn-edit btnEDITsmall">edit</button>
-
-                        </div>
+                        </div> -->
 
                     </div>
                     <button class="btnPlus">+</button>
@@ -151,6 +150,24 @@
                 <div class="div4">
                     <div class="ulFlex">
                          <div class="li1 lismall">
+                        <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/farmer/male" alt="avatar">
+                            <div class="div-name">
+                                <p class="name nameSmall">marwan</p>
+                                <p class="small SMALL">Security</p>
+                            </div>
+                            <button class="btn-edit btnEDITsmall">sup</button>
+
+                        </div>
+                         <!-- <div class="li1 lismall">
+                        <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/firefighters/female" alt="avatar">
+                            <div class="div-name">
+                                <p class="name nameSmall">simo</p>
+                                <p class="small SMALL">Security</p>
+                            </div>
+                            <button class="btn-edit btnEDITsmall">sup</button>
+
+                        </div> -->
+                         <!-- <div class="li1 lismall">
                         <img class="image imgSmall" src="" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">persone1</p>
@@ -158,8 +175,8 @@
                             </div>
                             <button class="btn-edit btnEDITsmall">edit</button>
 
-                        </div>
-                         <div class="li1 lismall">
+                        </div> -->
+                         <!-- <div class="li1 lismall">
                         <img class="image imgSmall" src="" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">persone1</p>
@@ -167,34 +184,16 @@
                             </div>
                             <button class="btn-edit btnEDITsmall">edit</button>
 
-                        </div>
-                         <div class="li1 lismall">
-                        <img class="image imgSmall" src="" alt="avatar">
+                        </div> -->
+                         <!-- <div class="li1 lismall">
+                        <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/police/male" alt="avatar">
                             <div class="div-name">
-                                <p class="name nameSmall">persone1</p>
-                                <p class="small SMALL">ee</p>
+                                <p class="name nameSmall">ayman</p>
+                                <p class="small SMALL">security</p>
                             </div>
-                            <button class="btn-edit btnEDITsmall">edit</button>
+                            <button class="btn-edit btnEDITsmall">sup</button>
 
-                        </div>
-                         <div class="li1 lismall">
-                        <img class="image imgSmall" src="" alt="avatar">
-                            <div class="div-name">
-                                <p class="name nameSmall">persone1</p>
-                                <p class="small SMALL">ee</p>
-                            </div>
-                            <button class="btn-edit btnEDITsmall">edit</button>
-
-                        </div>
-                         <div class="li1 lismall">
-                        <img class="image imgSmall" src="" alt="avatar">
-                            <div class="div-name">
-                                <p class="name nameSmall">persone1</p>
-                                <p class="small SMALL">ee</p>
-                            </div>
-                            <button class="btn-edit btnEDITsmall">edit</button>
-
-                        </div>
+                        </div> -->
 
                     </div>
                     <button class="btnPlus">+</button>
@@ -204,12 +203,12 @@
                 <div class="div5">
                     <div class="ulFlex">
                          <div class="li1 lismall">
-                        <img class="image imgSmall" src="" alt="avatar">
+                        <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/farmer/male" alt="avatar">
                             <div class="div-name">
-                                <p class="name nameSmall">persone1</p>
-                                <p class="small SMALL">ee</p>
+                                <p class="name nameSmall">amin</p>
+                                <p class="small SMALL">manager</p>
                             </div>
-                            <button class="btn-edit btnEDITsmall">edit</button>
+                            <button class="btn-edit btnEDITsmall">sup</button>
 
                         </div>
 
@@ -219,12 +218,12 @@
                 <div class="div6">
                     <div class="ulFlex">
                          <div class="li1 lismall">
-                        <img class="image imgSmall" src="" alt="avatar">
+                        <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/operator/male" alt="avatar">
                             <div class="div-name">
-                                <p class="name nameSmall">persone1</p>
-                                <p class="small SMALL">ee</p>
+                                <p class="name nameSmall">jawad</p>
+                                <p class="small SMALL">Cleaning</p>
                             </div>
-                            <button class="btn-edit btnEDITsmall">edit</button>
+                            <button class="btn-edit btnEDITsmall">sup</button>
 
                         </div>
 

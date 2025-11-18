@@ -1,15 +1,15 @@
+let arry = [];
+let Data = {};
+let conteur = 0;
+// 
 const modal = document.querySelector('#modal');
 const close = document.querySelector('#close')
 const AddWorker = document.querySelector('#AddWorker');
-
-AddWorker.addEventListener('click', function () {
-    modal.style.display = "block";
-})
-close.addEventListener('click', function () {
-    modal.style.display = "none";
-
-})
-
+// 
+// regex
+const regexname = /^[a-zA-ZÀ-ÿ0-9\s'.,-]{2,15}$/;
+const regeximageurl = /^(https?:\/\/.*)$/i;
+//   les inputs
 const Valide_Worker = document.querySelector('#Valide_Worker');
 const form = document.querySelector('#form');
 const parent_list = document.querySelector('#parent_list');
@@ -17,86 +17,138 @@ const InputName = document.querySelector('#name');
 const select = document.querySelector('#role');
 const email = document.querySelector('#email');
 const company = document.querySelector('#company');
+const phone = document.querySelector('#phone');
 const experienceStartDate = document.querySelector('#experience-start-date');
 const experienceEndDate = document.querySelector('#experience-end-date');
-const url=document.querySelector('#photo');
-const photo=document.querySelector('#photto');
-let arry = [];
+const url = document.querySelector('#photo');
 
+// modal block
+const blurr=document.querySelector('#bgMOdal');
+AddWorker.addEventListener('click', function () {
+    modal.style.display = "block";
+    blurr.style.display="block";
+})
+close.addEventListener('click', function () {
+    modal.style.display = "none";
+    blurr.style.display="none";
+
+})
+
+// affichage dans header
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     //    validation
-    let conteur=0;
-    if (InputName.value == " " || InputName.value == "") {
-        alert('saisir name')
-    } else {
-                // conteur++;
-        parent_list.innerHTML += `
-        <div onclick="modall(${++conteur})" class="li1">
-                <img class="image imgSmalll" src="" alt="avatar">
+    if (!regexname.test(InputName.value)) {
+        return alert('saisir name')
+    }
+    if (!regeximageurl.test(url.value)) {
+        return alert('saisir URL');
+
+    }
+    Data = {
+        name: InputName.value,
+        role: select.value,
+        emaill: email.value,
+        phonee:phone.value,
+        URL: url.value,
+        Company: company.value,
+        ExSTART: experienceStartDate.value,
+        ExEND: experienceEndDate.value
+    }
+    arry.push(Data);
+    console.log(Data);
+   
+    parent_list.innerHTML += `   
+  
+        <div  class="li1">
+                <img onclick="modall(${conteur++})" class="image imgSmalll" src="${url.value}" alt="avatar">
                 <div class="div-name">
                     <p class="name nameSmall2M">${InputName.value}</p>
                     <p class="small small2M">${select.value}</p>
                 </div>
-                <button class="btn-edit btnEditsmall editJS">edit</button>
+                <button class="btn-edit btnEditsmall editJS">Sup</button>
             </div>
    `
-    }
-    let Data = {
-        name: InputName.value,
-        role: select.value,
-        emaill:email.value,
-        phonee:phone.value
-    }
-    arry.push(Data);
-    console.log(Data);
     form.reset();
-})
-let card = document.querySelector('.btn-edit');
-const header = document.querySelector('#header');
+});
+
+// modal des information
+let header = document.querySelector('#header');
+let div=document.createElement('div');
+header.append(div);
 function modall(index) {
-    //   const indexx=arry[index-1];
-    console.log("welcom");
-     console.log("1");
-    console.log(arry[index-1]);
-      
-    //  arry.forEach(element => {
-          header.innerHTML += `
+       div.innerHTML = `
         <div id="modal2">
             <div id="modal-content">
                 <span id="close2" class="close">&times;</span>
-                <div>
-                    <p>NAME : <span>${arry[index-1].name}</span></p>
-                    <p>ROLE : <span>${arry[index-1].role}</span></p>
-                    <p>PHONE : <span>${arry[index-1].phonee}</span></p>
-                    <p>EMAIL : <span>${arry[index-1].emaill}</span></p>
+                <div class="informations">
+                    <p>NAME : <span>${arry[index].name}</span></p>
+                    <p>ROLE : <span>${arry[index].role}</span></p>
+                    <p>PHONE : <span>${arry[index].phonee}</span></p>
+                    <p>EMAIL : <span>${arry[index].emaill}</span></p>
+                    <p>URL : <span>${arry[index].URL}</span></p>
                 </div>
             </div>
          </div>
     `
-  
-    //  });
-        const modal2 = document.querySelector('#modal2');
+
+    const modal2 = document.querySelector('#modal2');
     const close2 = document.querySelector('#close2')
-    modal2.style.display="block";
-    close2.addEventListener('click',function(){
-    modal2.style.display="none";
+    modal2.style.display = "block";
+    close2.addEventListener('click', function () {
+        modal2.style.display = "none";
 
     })
 }
 
 // plus exeprience
-const plusierExperience=document.querySelector('#plusier-experience')
-const addExperience=document.querySelector('#Add-experience');
-addExperience.addEventListener('click',function(){
-     plusierExperience.innerHTML+=`
-        <div id="plusier-experience">
-                        <label for="company">Company :</label>
-                        <input type="text" id="company" name="company" placeholder="Company" required><br>
-                        <label for="experience-start-date" >Start :</label>
-                        <input type="date" id="experience-start-date" name="experience-start-date" required><br>
-                        <label for="experience-end-date">End  :</label>
-                        <input type="date" id="experience-end-date" name="experience-end-date" required><br>
-                    </div>
-     `
+const plusierExperience = document.querySelector('#plusier-experience')
+const addExperience = document.querySelector('#experience');
+addExperience.style = `
+ border:solid 2px ;
+ border-radius:10px;
+ padding:5px
+`
+addExperience.addEventListener('click', function () {
+    plusierExperience.style.display = "block"
+    plusierExperience.style = `border:solid 2px green;padding:10px;border-radius:10px`
+
 })
+addExperience.addEventListener('dblclick', function () {
+    plusierExperience.style.display = "none"
+})
+
+
+const supprimer=document.querySelectorAll('.btnEditsmall');
+       supprimer.addEventListener('click',function(){
+arry.forEach(eval,function(){
+    const remove =  eval.supprimer.closest('.li1');
+    arry.splice();
+   })
+})
+
+// btn plus modal affiche tout
+// const plus=document.querySelectorAll('.btnPlus');
+// plus.addEventListener('click',function(){
+//    const section=document.createElement('section');
+//    const main=document.querySelector('main');
+//     main.append(section);
+//     section.innerHTML=`
+    
+//     `
+// })
+
+
+
+    // <div id="modal3">
+    //         <div id="modal-content3">
+    //             <span id="close3" class="close3">&times;</span>
+    //             <div class="informations">
+    //                 <p>NAME : <span>${arry[index].name}</span></p>
+    //                 <p>ROLE : <span>${arry[index].role}</span></p>
+    //                 <p>PHONE : <span>${arry[index].phonee}</span></p>
+    //                 <p>EMAIL : <span>${arry[index].emaill}</span></p>
+    //                 <p>URL : <span>${arry[index].URL}</span></p>
+    //             </div>
+    //         </div>
+    //      </div>

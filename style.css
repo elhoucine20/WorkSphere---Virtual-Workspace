@@ -3,10 +3,16 @@
     padding: 0px;
     margin: 0;
 }
-
+#photto{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #a3bbb6;
+    /* margin-bottom: 10px; */
+}
 .image{
-    width:  45px;
-    height:  45px;
+    width:  35px;
+    height:  35px;
     border: solid 1px;
     border-radius: 100%;
 
@@ -92,7 +98,10 @@ main{
      background-repeat: no-repeat;
      background-position: center ;
     background-size:100% 100% ;
-     object-fit: cover;
+    margin: 10px;
+    margin-bottom: 15px;
+     /* object-fit: cover; */
+
      /* background-origin: unset; */
 
      
@@ -176,10 +185,11 @@ main{
     /* background-size: cover; */
     display: flex;
     align-items: center;
-    gap: 10px;
+    /* gap: 5px; */
+    justify-content: space-evenly;
     border: solid 2px ;
     border-radius: 10px;
-    padding: 5px;
+    /* padding: 5px; */
 }
 .name{
     font-weight: bold;
@@ -202,6 +212,7 @@ main{
 .imgSmall{
     width: 20px;
     height: 20px;
+
 }
 .nameSmall{
     font-size: xx-small;
@@ -350,63 +361,40 @@ h2{
     width: 75%;
 }
 }
-/*  */
-@media(min-width:601px) and (max-width:1024px){
+/* med */
+@media(min-width:601px) and (max-width:900px){
  main{
     background-size:100% 100% ;
  }
- /* body{
-    font-size: 8px;
-    
- } */
- /* .li1{
- width: 90px;
-} */
 
 .small{
     font-size: 10px;
-    /* position: relative; */
 }
 
-/* .btn-edit{
-    padding: 0px ;
-    
-} */
-
-.li1{
-     width: 110px;
+.lisHeader{
+     width: 100px;
      height: 25px;
      padding: 5px;
-     /* display: flex; */
      gap: 2px;
 }
-.image{
-    width:  35px;
-    height:  37px;
-    /* margin: 0px; */
+.imgSmalll{
+    width: 34px;
+    height: 30px;
+}
+.nameSmall2M{
+ font-size: xx-small;
 
-}
-.name{
-    font-size: small;
-}
-.small2M{
-    font-size: 20px;
-
-}
-.small{
-    font-size: 12px;
 }
 .btnEditsmall{
     font-size: xx-small;
-    /* padding: 5px; */
-    padding: 0px 2px;
+    padding: 5px;
+     padding: 0px 2px;
       
+}  
+
+.small{
+    font-size: 12px;
 } 
-/* .editJS{
-    font-size:5px ;
-} */
-
-
 .btn-Add-New{
     padding: 2px;
     width: 90px;
@@ -416,9 +404,7 @@ h2{
     width: 90px;
     
 }
-#company{
-    width: 75%;
-}
+
 }
 
 

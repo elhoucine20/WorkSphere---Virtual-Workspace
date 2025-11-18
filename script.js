@@ -16,7 +16,11 @@ const parent_list = document.querySelector('#parent_list');
 const InputName = document.querySelector('#name');
 const select = document.querySelector('#role');
 const email = document.querySelector('#email');
-const phone = document.querySelector('#phone');
+const company = document.querySelector('#company');
+const experienceStartDate = document.querySelector('#experience-start-date');
+const experienceEndDate = document.querySelector('#experience-end-date');
+const url=document.querySelector('#photo');
+const photo=document.querySelector('#photto');
 let arry = [];
 
 form.addEventListener('submit', function (e) {
@@ -62,10 +66,10 @@ function modall(index) {
             <div id="modal-content">
                 <span id="close2" class="close">&times;</span>
                 <div>
-                    <p>name:${arry[index-1].name}</p>
-                    <p>role:${arry[index-1].role}</p>
-                    <p>phone:${arry[index-1].phonee}</p>
-                    <p>email:${arry[index-1].emaill}</p>
+                    <p>NAME : <span>${arry[index-1].name}</span></p>
+                    <p>ROLE : <span>${arry[index-1].role}</span></p>
+                    <p>PHONE : <span>${arry[index-1].phonee}</span></p>
+                    <p>EMAIL : <span>${arry[index-1].emaill}</span></p>
                 </div>
             </div>
          </div>
@@ -82,7 +86,17 @@ function modall(index) {
 }
 
 // plus exeprience
+const plusierExperience=document.querySelector('#plusier-experience')
 const addExperience=document.querySelector('#Add-experience');
 addExperience.addEventListener('click',function(){
-     
+     plusierExperience.innerHTML+=`
+        <div id="plusier-experience">
+                        <label for="company">Company :</label>
+                        <input type="text" id="company" name="company" placeholder="Company" required><br>
+                        <label for="experience-start-date" >Start :</label>
+                        <input type="date" id="experience-start-date" name="experience-start-date" required><br>
+                        <label for="experience-end-date">End  :</label>
+                        <input type="date" id="experience-end-date" name="experience-end-date" required><br>
+                    </div>
+     `
 })

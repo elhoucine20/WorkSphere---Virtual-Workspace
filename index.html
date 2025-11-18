@@ -13,7 +13,7 @@
     <header id="header">
         <h2>Staff-Members</h2>
         <div class="List-Header" id="parent_list">
-            <div class="li1 ">
+            <div class="li1 lisHeader">
                 <img class="image imgSmalll" src="img/_DSC0188.jpg" alt="avatar">
                 <div class="div-name">
                     <p class="name nameSmall2M">persone1</p>
@@ -31,7 +31,7 @@
                 <h2>Add Worker</h2>
                 <form id="form">
                     <label for="name">Name : </label>
-                    <input type="text" id="name" name="name" placeholder="Nom-Prenom" ><br><br>
+                    <input type="text" id="name" name="name" placeholder="Nom-Prenom" required><br><br>
                     <label for="role">Role :</label>
                     <select name="role" id="role">
                         <option value="Receptionist">Receptionist</option>
@@ -41,12 +41,12 @@
                         <option value="Cleaning">Cleaning</option>
                     </select><br><br>
                     <label for="photo">Photo (URL):</label>
-                    <input type="text" id="photo" name="photo" placeholder="URL" ><br><br>
-                    <img src="" alt="">
+                    <input type="text" id="photo" name="photo" placeholder="URL" required ><br>
+                    <img id="photto" src="" alt=""><br>
                     <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" placeholder="Email" ><br><br>
+                    <input type="email" id="email" name="email" placeholder="Email" required ><br><br>
                     <label for="phone">Phone :</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Phone" ><br><br>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone" required><br><br>
                     <label for="experience">Experience :</label>
                     <div id="plusier-experience">
                         <label for="company">Company :</label>
@@ -55,9 +55,8 @@
                         <input type="date" id="experience-start-date" name="experience-start-date" required><br>
                         <label for="experience-end-date">End  :</label>
                         <input type="date" id="experience-end-date" name="experience-end-date" required><br>
-                        <button type="button" class="Btn-Cancel" id="Add-experience">Plus</button><br><br><br><br>
-
                     </div>
+                        <button type="button" class="Btn-Cancel" id="Add-experience">Plus</button><br><br><br>
                   <button class="btn-Add-New" id="Valide_Worker" type="submit">Add Worker</button><br>
                   <button class="Btn-Cancel" type="reset">Cancel</button><br>
                 </form>

@@ -29,12 +29,12 @@ form.addEventListener('submit', function (e) {
                 // conteur++;
         parent_list.innerHTML += `
         <div onclick="modall(${++conteur})" class="li1">
-                <img class="image" src="" alt="avatar">
+                <img class="image imgSmalll" src="" alt="avatar">
                 <div class="div-name">
-                    <p class="name">${InputName.value}</p>
-                    <p class="small">${select.value}</p>
+                    <p class="name nameSmall2M">${InputName.value}</p>
+                    <p class="small small2M">${select.value}</p>
                 </div>
-                <button class="list" class="btn-edit">dit</button>
+                <button class="btn-edit btnEditsmall editJS">edit</button>
             </div>
    `
     }
@@ -48,14 +48,14 @@ form.addEventListener('submit', function (e) {
     console.log(Data);
     form.reset();
 })
-let card = document.querySelector('.list');
+let card = document.querySelector('.btn-edit');
 const header = document.querySelector('#header');
 function modall(index) {
     //   const indexx=arry[index-1];
     console.log("welcom");
      console.log("1");
     console.log(arry[index-1]);
-
+      
     //  arry.forEach(element => {
           header.innerHTML += `
         <div id="modal2">

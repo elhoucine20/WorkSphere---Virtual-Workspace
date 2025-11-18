@@ -90,7 +90,9 @@ main{
     height:100vh ;
      background-image: url('img/photo-de-setnence-croisi.jpg');
      background-repeat: no-repeat;
-     background-size: cover;
+     background-position: center ;
+    background-size:100% 100% ;
+     object-fit: cover;
      /* background-origin: unset; */
 
      
@@ -193,6 +195,8 @@ main{
 
 .lismall{
      width: 90px;
+     display: flex;
+     /* justify-content: space-evenly; */
      
 }
 .imgSmall{
@@ -268,6 +272,153 @@ h2{
 
 
 /* medai */
-/* @media(max-width:768px){
 
+
+
+
+
+@media(max-width:600px){
+ main{
+    background-size:100% 100% ;
+ }
+ /* body{
+    font-size: 8px;
+    
+ } */
+ /* .li1{
+ width: 90px;
 } */
+
+/* .small{ */
+    /* font-size: 10px; */
+    /* position: relative; */
+/* } */
+
+/* .btn-edit{
+    padding: 0px ;
+    
+} */
+/* .li1{
+     width: 70px;
+     display: flex; */
+     /* justify-content: space-evenly; */
+     /* gap: 1px;
+} */
+
+.li1{
+     width: 89px;
+     padding: 0px;
+     display: flex;
+     gap: 2px;
+}
+.image{
+    width:  20px;
+    height:  23px;
+
+}
+.name{
+    font-size: 7px;
+}
+.small2M{
+    font-size: xx-small;
+
+}
+.small{
+    font-size: 5px;
+}
+.btnEditsmall{
+    font-size: xx-small;
+    /* padding: 5px; */
+    padding: 0px 2px;
+      
+} 
+.editJS{
+    font-size:5px ;
+}
+
+
+.btn-Add-New{
+    padding: 2px;
+    width: 90px;
+}
+.Btn-Cancel{
+    padding: 2px;
+    width: 90px;
+    
+}
+#company{
+    width: 75%;
+}
+}
+/*  */
+@media(min-width:601px) and (max-width:1024px){
+ main{
+    background-size:100% 100% ;
+ }
+ /* body{
+    font-size: 8px;
+    
+ } */
+ /* .li1{
+ width: 90px;
+} */
+
+.small{
+    font-size: 10px;
+    /* position: relative; */
+}
+
+/* .btn-edit{
+    padding: 0px ;
+    
+} */
+
+.li1{
+     width: 110px;
+     height: 25px;
+     padding: 5px;
+     /* display: flex; */
+     gap: 2px;
+}
+.image{
+    width:  35px;
+    height:  37px;
+    /* margin: 0px; */
+
+}
+.name{
+    font-size: small;
+}
+.small2M{
+    font-size: 20px;
+
+}
+.small{
+    font-size: 12px;
+}
+.btnEditsmall{
+    font-size: xx-small;
+    /* padding: 5px; */
+    padding: 0px 2px;
+      
+} 
+/* .editJS{
+    font-size:5px ;
+} */
+
+
+.btn-Add-New{
+    padding: 2px;
+    width: 90px;
+}
+.Btn-Cancel{
+    padding: 2px;
+    width: 90px;
+    
+}
+#company{
+    width: 75%;
+}
+}
+
+

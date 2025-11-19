@@ -13,6 +13,8 @@ const regeximageurl = /^(https?:\/\/.*)$/i;
 const Valide_Worker = document.querySelector('#Valide_Worker');
 const form = document.querySelector('#form');
 const parent_list = document.querySelector('#parent_list');
+const modal_List = document.querySelector('#modal_List');
+const modalList = document.querySelector('#modal-List');
 const InputName = document.querySelector('#name');
 const select = document.querySelector('#role');
 const email = document.querySelector('#email');
@@ -57,6 +59,7 @@ form.addEventListener('submit', function (e) {
     }
     arry.push(Data);
     console.log(Data);
+    
    
     parent_list.innerHTML += `   
   
@@ -66,11 +69,43 @@ form.addEventListener('submit', function (e) {
                     <p class="name nameSmall2M">${InputName.value}</p>
                     <p class="small small2M">${select.value}</p>
                 </div>
-                <button class="btn-edit btnEditsmall editJS">Sup</button>
+                <button class="btn-edit btnEditsmall editJS">edit
+                </button>
             </div>
    `
+
+
+   modal_List.innerHTML += `   
+  
+        <div  class="li1">
+                <img  class="image imgSmalll" src="${url.value}" alt="avatar">
+                <div class="div-name">
+                    <p class="name nameSmall2M">${InputName.value}</p>
+                    <p class="small small2M">${select.value}</p>
+                </div>
+                <button class="btn-edit btnEditsmall editJS">edit
+                </button>
+            </div>
+   `
+
     form.reset();
 });
+
+// btn plus modal affiche tout
+const blurr3=document.querySelector('#bgMOdal3');
+const plus=document.querySelectorAll('.btnPlus');
+plus.forEach(ele=>{
+ele.addEventListener('click',function(){
+        const close3 = document.querySelector('#close3')
+    modalList.style.display = "block";
+    blurr3.style.display="block";
+
+    close3.addEventListener('click', function () {
+        modalList.style.display = "none";
+    blurr3.style.display="none";
+    })
+})
+})
 
 // modal des information
 let header = document.querySelector('#header');
@@ -101,6 +136,8 @@ function modall(index) {
     })
 }
 
+
+
 // plus exeprience
 const plusierExperience = document.querySelector('#plusier-experience')
 const addExperience = document.querySelector('#experience');
@@ -117,28 +154,6 @@ addExperience.addEventListener('click', function () {
 addExperience.addEventListener('dblclick', function () {
     plusierExperience.style.display = "none"
 })
-
-
-const supprimer=document.querySelectorAll('.btnEditsmall');
-       supprimer.addEventListener('click',function(){
-arry.forEach(eval,function(){
-    const remove =  eval.supprimer.closest('.li1');
-    arry.splice();
-   })
-})
-
-// btn plus modal affiche tout
-// const plus=document.querySelectorAll('.btnPlus');
-// plus.addEventListener('click',function(){
-//    const section=document.createElement('section');
-//    const main=document.querySelector('main');
-//     main.append(section);
-//     section.innerHTML=`
-    
-//     `
-// })
-
-
 
     // <div id="modal3">
     //         <div id="modal-content3">

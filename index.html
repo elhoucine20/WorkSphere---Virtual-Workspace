@@ -9,7 +9,7 @@
 
 
 <body>
-    <!-- header -->
+    
     <aside id="header">
         <h2>Staff-Members</h2>
         <div class="List-Header" id="parent_list">
@@ -23,7 +23,7 @@
             </div>
 
         </div>
-        <button id="AddWorker" class="btn-Add-New">Add New Worker</button>
+        <button onsubmit="validationForm(this)" id="AddWorker" class="btn-Add-New">Add New Worker</button>
         <div id="bgMOdal"></div>
         <div id="modal">
             <div id="modal-content">
@@ -48,37 +48,33 @@
                     <label for="phone">Phone :</label>
                     <input type="tel" id="phone" name="phone" placeholder="Phone" required><br><br>
                     <label id="experience" for="experience">Experience :</label> <br>
-                    <div style="display: none;" id="plusier-experience">
-                        <label for="company">Company :</label>
-                        <input type="text" id="company" name="company" placeholder="Company"><br>
-                        <label for="experience-start-date">Start :</label>
-                        <input type="date" id="experience-start-date" name="experience-start-date"><br>
-                        <label for="experience-end-date">End :</label>
-                        <input type="date" id="experience-end-date" name="experience-end-date"><br>
-                    </div><br><br>
+                    <div>
+                        <div style="display: none;" id="plusier-experience">
+                            <label for="company">Company :</label>
+                            <input type="text" id="company" name="company" placeholder="Company"><br>
+                            <label for="experience-start-date">Start :</label>
+                            <input type="date" id="experience-start-date" name="experience-start-date"><br>
+                            <label for="experience-end-date">End :</label>
+                            <input type="date" id="experience-end-date" name="experience-end-date"><br>
+
+                        </div><br>
+                        <button id="PlusExpe">plus experience</button><br><br>
+                    </div>
+
                     <button class="btn-Add-New" id="Valide_Worker" type="submit">Add Worker</button><br>
                     <button class="Btn-Cancel" type="reset">Cancel</button><br>
                 </form>
             </div>
         </div>
         <div id="bgMOdal3"></div>
-     
+
         <div id="modal-List">
             <div id="modal_List">
-            <span id="close3" class="close">&times;</span><br><br>
-                
+                <span id="close3" class="close">&times;</span><br><br>
 
-                <!-- <div class="modalContentCentre"> -->
-                    <div class="li1 lisHeader">
-                        <img class="image imgSmalll" src="img/_DSC0188.jpg" alt="avatar">
-                        <div class="div-name">
-                            <p class="name nameSmall2M">el houcine</p>
-                            <p class="small small2M">manager</p>
-                        </div>
-                        <button class="btnEditsmall btn-edit">X</button>
-                    </div>
 
-                <!-- </div> -->
+            
+
             </div>
         </div>
 
@@ -88,31 +84,29 @@
     <main>
 
         <section class="section">
-            <div id="div1" class="div1">
-                <div class="ulFlex">
+            <div id="salle-manager" class="div1">
+                <div id="ul1" class="ulFlex">
                     <div class="li1 ">
-                        <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/operator/female"
-                            alt="avatar">
+                        <img class="image imgSmall" src="img/_DSC0188.jpg" alt="avatar">
                         <div class="div-name">
                             <p class="name nameSmall">manal</p>
-                            <p class="small">Receptionist</p>
+                            <p class="small">manager</p>
                         </div>
                         <button class="btn-edit btnEDITsmall">X</button>
 
                     </div>
 
                 </div>
-                <button class="btnPlus">+</button>
+                <button id="plus1" class="btnPlus">+</button>
             </div>
-            <div id="div2" class="div2 ">
-                <div class="ulFlex">
+            <div id="salle-Receptionist" class="div2 ">
+                <div id="ul2" class="ulFlex">
                     <div class="ulFlex">
                         <div class="li1 lismall">
-                            <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/astronomer/male"
-                                alt="avatar">
+                            <img class="image imgSmall" src="img/_DSC0188.jpg" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">mohamed</p>
-                                <p class="small">Technician</p>
+                                <p class="small">Receptionist</p>
                             </div>
                             <button class="btn-edit btnEDITsmall">X</button>
 
@@ -121,26 +115,24 @@
                     </div>
 
                 </div>
-                <button class="btnPlus">+</button>
+                <button id="plus2" class="btnPlus">+</button>
             </div>
         </section>
         <section class="section2">
             <section class="asideTop">
-                <div id="div3" class="div3">
-                    <div class="ulFlex">
+                <div id="salle-Technician" class="div3">
+                    <div id="ul3" class="ulFlex">
                         <div class="li1 lismall">
-                            <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/police/female"
-                                alt="avatar">
+                            <img class="image imgSmall" src="img/_DSC0188.jpg" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">hasna</p>
-                                <p class="small SMALL">Cleaning</p>
+                                <p class="small SMALL">Technician</p>
                             </div>
                             <button class="btn-edit btnEDITsmall">X</button>
 
                         </div>
                         <div class="li1 lismall">
-                            <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/chef/female"
-                                alt="avatar">
+                            <img class="image imgSmall" src="img/_DSC0188.jpg" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">khalid</p>
                                 <p class="small SMALL">Technician</p>
@@ -148,16 +140,15 @@
                             <button class="btn-edit btnEDITsmall">X</button>
 
                         </div>
-              
+
 
                     </div>
-                    <button class="btnPlus">+</button>
+                    <button id="plus3" class="btnPlus">+</button>
                 </div>
-                <div id="div4" class="div4">
-                    <div class="ulFlex">
+                <div id="salle-Security" class="div4">
+                    <div id="ul4" class="ulFlex">
                         <div class="li1 lismall">
-                            <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/farmer/male"
-                                alt="avatar">
+                            <img class="image imgSmall" src="img/_DSC0188.jpg" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">marwan</p>
                                 <p class="small SMALL">Security</p>
@@ -166,31 +157,29 @@
 
                         </div>
                     </div>
-                    <button class="btnPlus">+</button>
+                    <button id="plus4" class="btnPlus">+</button>
                 </div>
             </section>
             <section class="asideBottom">
-                <div id="div5" class="div5">
-                    <div class="ulFlex">
+                <div id="salle-servers" class="div5">
+                    <div id="ul5" class="ulFlex">
                         <div class="li1 lismall">
-                            <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/farmer/male"
-                                alt="avatar">
+                            <img class="image imgSmall" src="img/_DSC0188.jpg" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">amin</p>
-                                <p class="small SMALL">manager</p>
+                                <p class="small SMALL">Technician</p>
                             </div>
                             <button class="btn-edit btnEDITsmall">X</button>
 
                         </div>
 
                     </div>
-                    <button class="btnPlus">+</button>
+                    <button id="plus5" class="btnPlus">+</button>
                 </div>
-                <div id="div6" class="div6">
-                    <div class="ulFlex">
+                <div id="salle-Cleaning" class="div6">
+                    <div id="ul6" class="ulFlex">
                         <div class="li1 lismall">
-                            <img class="image imgSmall" src="https://avatar.iran.liara.run/public/job/operator/male"
-                                alt="avatar">
+                            <img class="image imgSmall" src="img/_DSC0188.jpg" alt="avatar">
                             <div class="div-name">
                                 <p class="name nameSmall">jawad</p>
                                 <p class="small SMALL">Cleaning</p>
@@ -200,7 +189,7 @@
                         </div>
 
                     </div>
-                    <button class="btnPlus">+</button>
+                    <button id="plus6" class="btnPlus">+</button>
                 </div>
             </section>
         </section>

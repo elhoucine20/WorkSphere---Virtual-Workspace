@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+ <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-</head>
+ </head>
 
 
-<body>
-    
-    <aside id="header">
+ <body>
+    <aside id="aside">
         <h2>Staff-Members</h2>
         <div class="List-Header" id="parent_list">
             <div class="li1 lisHeader">
@@ -21,9 +20,8 @@
                 </div>
                 <button class="btnEditsmall btn-edit">edit</button>
             </div>
-
         </div>
-        <button onsubmit="validationForm(this)" id="AddWorker" class="btn-Add-New">Add New Worker</button>
+        <button id="AddWorker" class="btn-Add-New">Add New Worker</button>
         <div id="bgMOdal"></div>
         <div id="modal">
             <div id="modal-content">
@@ -42,12 +40,11 @@
                     </select><br><br>
                     <label for="photo">Photo (URL):</label>
                     <input type="text" id="photo" name="photo" placeholder="URL" required><br>
-                    <!-- <img id="photto" src="" alt=""><br> -->
                     <label for="email">Email :</label>
                     <input type="email" id="email" name="email" placeholder="Email" required><br><br>
                     <label for="phone">Phone :</label>
                     <input type="tel" id="phone" name="phone" placeholder="Phone" required><br><br>
-                    <label id="experience" for="experience">Experience :</label> <br>
+                    <div id="experience">Experience :</div> <br>
                     <div>
                         <div style="display: none;" id="plusier-experience">
                             <label for="company">Company :</label>
@@ -58,7 +55,7 @@
                             <input type="date" id="experience-end-date" name="experience-end-date"><br>
 
                         </div><br>
-                        <button id="PlusExpe">plus experience</button><br><br>
+                        <button id="PlusExpe">plus experience</button><br>
                     </div>
 
                     <button class="btn-Add-New" id="Valide_Worker" type="submit">Add Worker</button><br>
@@ -71,21 +68,14 @@
         <div id="modal-List">
             <div id="modal_List">
                 <span id="close3" class="close">&times;</span><br><br>
-
-
-            
-
             </div>
         </div>
-
-
-
     </aside>
     <main>
 
         <section class="section">
-            <div id="salle-manager"  class="div1">
-                <div id="div1">Manager</div>
+            <div id="salle-manager" class="div1">
+                <h2 id="div1">Manager</h2>
                 <div id="ul1" data-zone="zone" class="ulFlex">
                     <div class="li1 ">
                         <img class="image imgSmall" src="img/_DSC0188.jpg" alt="avatar">
@@ -98,12 +88,12 @@
                     </div>
 
                 </div>
-                <button id="Manager" data-button="Manager"  class="btnPlus">+</button>
+                <button id="Manager" data-button="Manager" class="btnPlus">+</button>
             </div>
-            <div id="salle-Receptionist"  class="div2 ">
-                <div id="div2">Receptionist</div>
+            <div id="salle-Receptionist" class="div2 ">
+                <h2 id="div2">Receptionist</h2>
 
-                <div id="ul2" >
+                <div id="ul2">
                     <div data-zone="zone" class="ulFlex">
                         <div class="li1 lismall">
                             <img class="image imgSmall" src="img/_DSC0188.jpg" alt="avatar">
@@ -118,13 +108,14 @@
                     </div>
 
                 </div>
-                <button id="Receptionist" data-button="Receptionist"  class="btnPlus">+</button>
+                <button id="Receptionist" data-button="Receptionist" class="btnPlus">+</button>
             </div>
         </section>
         <section class="section2">
+            <h2 style="display: none;"> les 4 div </h2>
             <section class="asideTop">
-                <div id="salle-Technician"  class="div3">
-                <div id="div3">Technician</div>
+                <div id="salle-Technician" class="div3">
+                    <h2 id="div3">Technician</h2>
 
                     <div id="ul3" data-zone="zone" class="ulFlex">
                         <div class="li1 lismall">
@@ -150,9 +141,9 @@
                     </div>
                     <button id="Technician" data-button="Technician" class="btnPlus">+</button>
                 </div>
-                <div id="salle-Security"  class="div4">
-                <div id="div4">Security</div>
-                    
+                <div id="salle-Security" class="div4">
+                    <h2 id="div4">Security</h2>
+
                     <div id="ul4" data-zone="zone" class="ulFlex">
                         <div class="li1 lismall">
                             <img class="image imgSmall" src="img/_DSC0188.jpg" alt="avatar">
@@ -164,14 +155,15 @@
 
                         </div>
                     </div>
-                    <button  id="Security" data-button="Security" class="btnPlus">+</button>
+                    <button id="Security" data-button="Security" class="btnPlus">+</button>
                 </div>
             </section>
             <section class="asideBottom">
                 <div id="salle-servers" class="div5">
-                
+                    <h2 id="div5">autre</h2>
 
-                    <div id="ul5" data-zone="zone"  class="ulFlex">
+
+                    <div id="ul5" data-zone="zone" class="ulFlex">
                         <div class="li1 lismall">
                             <img class="image imgSmall" src="img/_DSC0188.jpg" alt="avatar">
                             <div class="div-name">
@@ -185,8 +177,8 @@
                     </div>
                     <button id="plus5" data-button="servers" class="btnPlus">+</button>
                 </div>
-                <div id="salle-Cleaning"  class="div6">
-                <div id="div6">Cleaning</div>
+                <div id="salle-Cleaning" class="div6">
+                    <h2 id="div6">Cleaning</h2>
 
                     <div id="ul6" data-zone="zone" class="ulFlex">
                         <div class="li1 lismall">
@@ -207,9 +199,6 @@
 
     </main>
     <script src="script.js"></script>
-</body>
-
-</html>
-</body>
+ </body>
 
 </html>

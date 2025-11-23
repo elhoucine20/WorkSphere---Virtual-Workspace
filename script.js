@@ -1,18 +1,13 @@
 let arry = [];
-let currentZon = null;
 let Data = {};
-let conteur = 0;
-var id = 0;
-// 
-const modal = document.querySelector('#modal');
-const close = document.querySelector('#close')
-const AddWorker = document.querySelector('#AddWorker');
-// 
+let currentZon = null;
+let id = 0;
+
 // regex
 const regexname = /^[a-zA-ZÀ-ÿ0-9\s'.,-]{2,24}$/;
 const regeximageurl = /^(https?:\/\/.*)$/i;
+
 //   les inputs
-const Valide_Worker = document.querySelector('#Valide_Worker');
 const form = document.querySelector('#form');
 const parent_list = document.querySelector('#parent_list');
 const modal_List = document.querySelector('#modal_List');
@@ -25,46 +20,48 @@ const phone = document.querySelector('#phone');
 const experienceStartDate = document.querySelector('#experience-start-date');
 const experienceEndDate = document.querySelector('#experience-end-date');
 const url = document.querySelector('#photo');
-const PlusExpe = document.querySelector('#PlusExpe')
 
-// les 6 div
-const salle_manager = document.querySelector('#salle-manager');
+// les div (les salles)
 const div1 = document.querySelector('#ul1');
 const div2 = document.querySelector('#ul2');
 const div3 = document.querySelector('#ul3');
 const div4 = document.querySelector('#ul4');
 const div5 = document.querySelector('#ul5');
 const div6 = document.querySelector('#ul6');
-// 
+
+// les btns +(6)
 const plus = document.querySelectorAll('.btnPlus');
-// modal block
+
+// varaibles du modal form
+const modal = document.querySelector('#modal');
+const close = document.querySelector('#close')
+const AddWorker = document.querySelector('#AddWorker');
 const blurr = document.querySelector('#bgMOdal');
+// modal du form
 AddWorker.addEventListener('click', function () {
     modal.style.display = "block";
     blurr.style.display = "block";
 })
+// display non du form
 close.addEventListener('click', function () {
     modal.style.display = "none";
     blurr.style.display = "none";
 })
 
 // plus exeprience
+const PlusExpe = document.querySelector('#PlusExpe')
 const plusierExperience = document.querySelector('#plusier-experience')
 const addExperience = document.querySelector('#experience');
-addExperience.style = `
- border:solid 2px ;
- border-radius:10px;
- padding:5px
-`
 addExperience.addEventListener('click', function () {
     plusierExperience.style.display = "block"
     PlusExpe.style.display = "block"
-    plusierExperience.style = `border:solid 2px green;padding:10px;border-radius:10px`
+    plusierExperience.style = `border:solid 2px; padding:10px; border-radius:10px`
 })
 addExperience.addEventListener('dblclick', function () {
     plusierExperience.style.display = "none";
     PlusExpe.style.display = "none"
 })
+
 PlusExpe.addEventListener('click', function () {
     plusierExperience.innerHTML += `
         <label for="company">Company :</label>
@@ -75,7 +72,8 @@ PlusExpe.addEventListener('click', function () {
                         <input type="date" id="experience-end-date" name="experience-end-date"><br>
     `
 })
-// affichage dans header
+
+// affichage dans navbar
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     //    validation
@@ -85,6 +83,8 @@ form.addEventListener('submit', function (e) {
     if (!regeximageurl.test(url.value)) {
         return alert('saisir URL');
     }
+
+    // objet stocké data
     Data = {
         id: id++,
         name: InputName.value,
@@ -95,20 +95,25 @@ form.addEventListener('submit', function (e) {
         Company: company.value,
         ExSTART: experienceStartDate.value,
         ExEND: experienceEndDate.value,
-
+        zone:"main"
     }
+    // pushé data to array
     arry.push(Data);
+    //  affichage sur navbar et modal
     refreshLists();
     form.reset();
 });
+
 // modal des information
-let header = document.querySelector('#header');
+let aside = document.querySelector('#aside');
 let div = document.createElement('div');
-header.append(div);
+aside.append(div);
 function modall(workerId) {
+    // find l'elemnt by id 
     const worker = arry.find(w => w.id === workerId);
     if (!worker) return;
 
+    // affichage des informations
     div.innerHTML = `
         <div id="modal2">
             <div id="modal-content">
@@ -127,6 +132,7 @@ function modall(workerId) {
             </div>
          </div>
     `
+    // modal des informations
     const modal2 = document.querySelector('#modal2');
     const close2 = document.querySelector('#close2')
     modal2.style.display = "block";
@@ -135,14 +141,14 @@ function modall(workerId) {
     })
 }
 
-//  finction de nouvuax affichage 
+//  finction affichage sur navbar et modal-list
 function refreshLists() {
     parent_list.innerHTML = "";
     modal_List.innerHTML = ` <span id="close3" class="close">&times;</span><br>`;
 
-
-    arry.forEach((ele, i) => {
-        // aside list
+    arry.forEach(ele => {
+        if(ele.zone==="main"){
+              // navbar list
         parent_list.innerHTML += `
         <div  class="li1">
                 <img onclick="modall(${ele.id})" class="image imgSmalll" src="${ele.URL}" alt="avatar">
@@ -154,6 +160,7 @@ function refreshLists() {
                 </button>
             </div>`;
 
+        // modal list
         modal_List.innerHTML += `
             <div class="li1">
                 <img class="image imgSmalll" src="${ele.URL}" alt="avatar">
@@ -164,127 +171,124 @@ function refreshLists() {
                 <button onclick="AddWorkerr(${ele.id})" class="btn-edit btnEditsmall editJS">Add</button>
             </div>
         `
-
+        }
 
     });
 }
 
-
 // btn plus click
 plus.forEach(ele => {
     ele.addEventListener('click', function () {
-        currentZon = ele.dataset.button
-        // console.log("currentZon", currentZon)
+        // rocherché sur la zone by data-button
+        currentZon = ele.dataset.button;
 
- affich_modal() ;
-        });
+        // affichage du modal
+        affich_modal();
     });
-// });
-
-const zonTarget = {
-    Manager: maanager,
-    Receptionist: Receptionistt,
-    Technician: Techniciann,
-    Security: Securityy,
-    Cleaning: Cleaningg
-};
+});
 
 //  affichage manager
 function maanager(workerId) {
+    // search sur l'elemnte dand arry
     const worker = arry.find(w => w.id === workerId);
+    // pour l'element n'est pas  disponible la fonction va arrêté
     if (!worker) return;
-    div1.innerHTML += creatWorkerHTML(worker);
-    removeFromMain(workerId);
- affich_modal() ;
 
-    
+    worker.zone="Manager";
+    // pour find l'elemnt on va affiche sur la zone 
+    div1.innerHTML += creatWorkerHTML(worker);
+    refreshLists(); 
 }
 
 //  reciptionist
 function Receptionistt(workerId) {
     const worker = arry.find(w => w.id === workerId);
     if (!worker) return;
-    div2.innerHTML += creatWorkerHTML(worker);
-    removeFromMain(workerId);
- affich_modal() ;
 
+    worker.zone="Receptionist";
+    div2.innerHTML += creatWorkerHTML(worker);
+    refreshLists();
 }
 
 //  technicien
 function Techniciann(workerId) {
-     const worker = arry.find(w => w.id === workerId);
+    const worker = arry.find(w => w.id === workerId);
     if (!worker) return;
-    div3.innerHTML += creatWorkerHTML(worker);
-    removeFromMain(workerId);
- affich_modal() ;
 
+    worker.zone="Technician";
+    div3.innerHTML += creatWorkerHTML(worker);
+    refreshLists();
 }
+
 //  security
 function Securityy(workerId) {
-        const worker = arry.find(w => w.id === workerId);
+    const worker = arry.find(w => w.id === workerId);
     if (!worker) return;
+
+    worker.zone="Security";
     div4.innerHTML += creatWorkerHTML(worker);
-    removeFromMain(workerId);
- affich_modal() ;
-
+    refreshLists();
 }
 
-//  scleaning
+//  cleaning
 function Cleaningg(workerId) {
-     const worker = arry.find(w => w.id === workerId);
+    const worker = arry.find(w => w.id === workerId);
     if (!worker) return;
-    div6.innerHTML += creatWorkerHTML(worker);
-    removeFromMain(workerId);
- affich_modal() ;
 
+    worker.zone="Cleaning";
+    div6.innerHTML += creatWorkerHTML(worker);
+    refreshLists();
 }
 
+// add worker btn Add
 function AddWorkerr(workerId) {
-    const worker=arry.find(w=>w.id===workerId);
-    if(!worker) {
+    const worker = arry.find(w => w.id === workerId);
+
+    // if not find
+    if (!worker) {
         alert('worker not find');
         return;
     }
 
+    // if find
     const role = worker.role;
     if (role === currentZon) {
-        // maanager(index);
-        zonTarget[currentZon](workerId);
-
+        // verification by if-else
+        if (currentZon === "Manager") {
+            maanager(workerId);
+        }
+        else if (currentZon === "Receptionist") {
+            Receptionistt(workerId);
+        }
+        else if (currentZon === "Technician") {
+            Techniciann(workerId);
+        }
+        else if (currentZon === "Security") {
+            Securityy(workerId);
+        }
+        else if (currentZon === "Cleaning") {
+            Cleaningg(workerId);
+        }
     } else {
         alert('impossible dans cette zone')
         return;
     }
- affich_modal() ;
-
+    affich_modal();
 }
 
-
+// function create worker
 function creatWorkerHTML(worker) {
     return `
-        <div class="li1 lismall">
+        <div data-id="${worker.id}" class="li1 lismall">
             <img class="image imgSmall" src="${worker.URL}" alt="avatar">
             <div class="div-name">
                 <p class="name nameSmall">${worker.name}</p>
                 <p class="small small2M">${worker.role}</p>
             </div>
-            <button  class="btn-edit btnEDITsmall editJS">X</button>
+            <button onclick="returnToMain(${worker.id})" class="btn-edit btnEDITsmall editJS">X</button>
         </div>
     `;
- affich_modal() ;
-
 }
-
-function removeFromMain(workerId) {
-    const index=arry.findIndex(w=>w.id===workerId);
-    if(index!==-1){
-        arry.splice(index, 1);
-    refreshLists();
-    }
-    affich_modal();
-}
-
-
 
 
 function affich_modal() {
@@ -292,11 +296,33 @@ function affich_modal() {
     const close3 = document.querySelector('#close3')
     modalList.style.display = "block";
     blurr3.style.display = "block";
-
     close3.addEventListener('click', function () {
         modalList.style.display = "none";
         blurr3.style.display = "none";
     })
 }
 
+// remove from zone 
+function returnToMain(workerId){
+   const worker=arry.find(w=>w.id===workerId);
+   if(!worker){
+    alert('worker not found');
+    return;
+   }
+   worker.zone="main";
+   const workerRemove=document.querySelector(`[data-id="${workerId}"]`);
+   if(workerRemove){
+     workerRemove.remove();
+   }
+   refreshLists();
+
+   const modalList =document.querySelector('#modal-List');
+   const blurr3 =document.querySelector('#bgMOdal3');
+   if(modalList){
+    modalList.style.display="none";
+   }
+     if(blurr3){
+    blurr3.style.display="none";
+   }
+}
 

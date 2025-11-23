@@ -153,17 +153,15 @@ main{
      background-repeat: no-repeat;
      background-position: center ;
     background-size:100% 100% ;
-    /* margin: 10px; */
-    /* margin-bottom: 15px; */
-     /* object-fit: cover; */
-
-     /* background-origin: unset; */
 
 }
 #experience{
     text-align: center;
     display: inline;
     width: 100px;
+    border:solid 2px ;
+ border-radius:10px;
+ padding:5px
 }
 
 .section{

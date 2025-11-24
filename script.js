@@ -118,7 +118,7 @@ aside.append(div);
 function modall(workerId) {
     // find l'elemnt by id 
     const worker = arry.find(w => w.id === workerId);
-    
+
     // affichage des informations
     div.innerHTML = `
         <div id="modal2">
@@ -178,7 +178,7 @@ function refreshLists() {
             </div>
         `
         }
-
+//    checkZOnes();
     });
 }
 
@@ -198,22 +198,22 @@ function maanager(workerId) {
     // search sur l'elemnte dand arry
     const worker = arry.find(w => w.id === workerId);
     // pour l'element n'est pas  disponible la fonction va arrêté
-    if (!worker) return;
 
     worker.zone="Manager";
     // pour find l'elemnt on va affiche sur la zone 
     div1.innerHTML += creatWorkerHTML(worker);
     refreshLists(); 
+   checkZOnes();
 }
 
 //  reciptionist
 function Receptionistt(workerId) {
     const worker = arry.find(w => w.id === workerId);
-    if (!worker) return;
 
     worker.zone="Receptionist";
     div2.innerHTML += creatWorkerHTML(worker);
     refreshLists();
+checkZOnes();
 }
 
 //  technicien
@@ -224,6 +224,7 @@ function Techniciann(workerId) {
     worker.zone="Technician";
     div3.innerHTML += creatWorkerHTML(worker);
     refreshLists();
+checkZOnes();
 }
 
 //  security
@@ -234,6 +235,7 @@ function Securityy(workerId) {
     worker.zone="Security";
     div4.innerHTML += creatWorkerHTML(worker);
     refreshLists();
+checkZOnes();
 }
 
 // servers
@@ -242,7 +244,7 @@ function Serverss(workerId){
     worker.zone = "Servers";
     div5.innerHTML += creatWorkerHTML(worker);
     refreshLists();
-
+checkZOnes();
 }
 //  cleaning
 function Cleaningg(workerId) {
@@ -252,13 +254,13 @@ function Cleaningg(workerId) {
     worker.zone="Cleaning";
     div6.innerHTML += creatWorkerHTML(worker);
     refreshLists();
+checkZOnes();
 }
 
 // add worker btn Add
 function AddWorkerr(workerId) {
     const worker = arry.find(w => w.id === workerId);
     // if find
-    // console.log(currentZon);
     const role = worker.role;
     if(currentZon === "Servers"){
           if (role === "Technician" || role==="Manager"|| role==="Cleaning") {
@@ -323,10 +325,10 @@ function affich_modal() {
 // remove from zone 
 function returnToMain(workerId){
    const worker=arry.find(w=>w.id===workerId);
-   if(!worker){
-    alert('worker not found');
-    return;
-   }
+//    if(!worker){
+//     alert('worker not found');
+//     return;
+//    }
    worker.zone="main";
    const workerRemove=document.querySelector(`[data-id="${workerId}"]`);
    if(workerRemove){
@@ -342,4 +344,20 @@ function returnToMain(workerId){
      if(blurr3){
     blurr3.style.display="none";
    }
+   checkZOnes();
+
 }
+
+// color zone
+function checkZOnes(){
+const lesZones=document.querySelectorAll('.ulFlex');
+lesZones.forEach(elemnt=>{
+       if(elemnt.querySelector('.li1')==null){
+       elemnt.parentElement.style.background=" rgba(255, 0, 0, 0.16)";
+       }else{
+       elemnt.parentElement.style.background=" rgba(4, 252, 8, 0.16)";
+         
+       }
+})
+}
+checkZOnes();

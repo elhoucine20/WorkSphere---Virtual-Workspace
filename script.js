@@ -6,6 +6,9 @@ let id = 0;
 // regex
 const regexname = /^[a-zA-ZÀ-ÿ0-9\s'.,-]{2,24}$/;
 const regeximageurl = /^(https?:\/\/.*)$/i;
+const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const regexPhone = /^[\d\s+()-]{10,}$/;
+
 
 //   les inputs
 const form = document.querySelector('#form');
@@ -37,6 +40,7 @@ const modal = document.querySelector('#modal');
 const close = document.querySelector('#close')
 const AddWorker = document.querySelector('#AddWorker');
 const blurr = document.querySelector('#bgMOdal');
+
 // modal du form
 AddWorker.addEventListener('click', function () {
     modal.style.display = "block";
@@ -83,6 +87,9 @@ form.addEventListener('submit', function (e) {
     if (!regeximageurl.test(url.value)) {
         return alert('saisir URL');
     }
+    if (!regexEmail.test(email.value)) {
+    return alert('saisir email');
+    }
 
     // objet stocké data
     Data = {
@@ -111,8 +118,7 @@ aside.append(div);
 function modall(workerId) {
     // find l'elemnt by id 
     const worker = arry.find(w => w.id === workerId);
-    if (!worker) return;
-
+    
     // affichage des informations
     div.innerHTML = `
         <div id="modal2">
@@ -230,6 +236,14 @@ function Securityy(workerId) {
     refreshLists();
 }
 
+// servers
+function Serverss(workerId){
+    const worker =arry.find(w=>w.id===workerId);
+    worker.zone = "Servers";
+    div5.innerHTML += creatWorkerHTML(worker);
+    refreshLists();
+
+}
 //  cleaning
 function Cleaningg(workerId) {
     const worker = arry.find(w => w.id === workerId);
@@ -243,16 +257,21 @@ function Cleaningg(workerId) {
 // add worker btn Add
 function AddWorkerr(workerId) {
     const worker = arry.find(w => w.id === workerId);
-
-    // if not find
-    if (!worker) {
-        alert('worker not find');
-        return;
-    }
-
     // if find
+    // console.log(currentZon);
     const role = worker.role;
-    if (role === currentZon) {
+    if(currentZon === "Servers"){
+          if (role === "Technician" || role==="Manager"|| role==="Cleaning") {
+            Serverss(workerId);
+             affich_modal();
+             return;
+          }else{
+            alert('impossible dans cette zone');
+            return;
+          }
+    } 
+    
+    if (role === currentZon || role==="Manager") {
         // verification by if-else
         if (currentZon === "Manager") {
             maanager(workerId);
@@ -290,7 +309,6 @@ function creatWorkerHTML(worker) {
     `;
 }
 
-
 function affich_modal() {
     const blurr3 = document.querySelector('#bgMOdal3');
     const close3 = document.querySelector('#close3')
@@ -325,4 +343,3 @@ function returnToMain(workerId){
     blurr3.style.display="none";
    }
 }
-

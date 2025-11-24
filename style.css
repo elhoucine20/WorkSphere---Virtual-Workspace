@@ -3,19 +3,16 @@
     padding: 0px;
     margin: 0;
 }
-/* #photto{
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-    background-color: #a3bbb6;
-} */
 .image{
     width:  35px;
     height:  35px;
     border: solid 1px;
     border-radius: 100%;
-
 }
+/* .bgc{
+    background-color: red;
+    opacity: 0.5;
+} */
 #PlusExpe{
     display: none;
     padding: 5px;
@@ -23,7 +20,6 @@
 body{
     display: flex;
 }
-
 aside{
     width: 20vw;
     height: 100vh;
@@ -34,7 +30,6 @@ aside{
     margin-bottom: 10px;
     gap: 10px;
 }
-
 .modal-content {
   background-color: #fefefe;
   margin: auto;
